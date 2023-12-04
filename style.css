@@ -76,7 +76,7 @@ nav{
 }
 
 .link a:hover::after{
-    width: 70%;
+    width: 100%; /* dodac na innych navbarach */
 }
 
 .btn{
@@ -108,10 +108,15 @@ nav{
     
 }
 
-.blur{
+.dots{
     position: absolute;
-    box-shadow: 0 0 1000px 50px #f17300;
     z-index: -100;
+    animation: rotate 12s linear infinite;
+    width: 600px;
+    opacity: 0.25;
+    top: -50%;
+    left: -50%;
+    filter: invert(67%) sepia(99%) saturate(4631%) hue-rotate(6deg) brightness(99%) contrast(103%);
 }
 
 header{
@@ -164,14 +169,18 @@ header .content p{
     font-weight: 200;
     color: #f17300;
     opacity: 0.1;
-    animation: slideDown 5s linear infinite;
+    animation: slideDown 12s linear infinite;
 }
 @keyframes slideDown {
-    from {transform: translateY(0)}
+    from {transform: translateY(-50vw)}
     to {transform: translateY(100vh);}
 }
 
-
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform:rotate(360deg)};
+    
+}
 
 
 
